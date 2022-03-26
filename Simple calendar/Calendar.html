@@ -1,0 +1,181 @@
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>
+    <!--
+        LAYOUT :
+        1. BACKGROUND
+        2. CALENDAR OUTLINE
+        3. AREA FOR MONTH
+        4. SQUARE FOR EVERY DAY
+        5. HIGHLIGHT ON CURRENT DAY
+        6. SIDEBAR FOR TODO LIST
+        FEATURES:
+        1. SYMBOL APPEARS ON DAYS WITH EVENTS ON THEM/ SYMBOLS FOR HOLIDAYS
+        2. ALLOW TO SCROLL THROUGH MONTHS
+        3. CALENDAR DYNAMICALLY MATCHES LAYOUT FOR EACH MONTH
+        4. CREATE MULTIPLE THEMES TO CHOOSE FROM FOR CALENDAR
+        5. SETTINGS BTTN
+    -->
+    <div class="wrapper">
+        <div class="calendar-outline">
+            <div class="month-year">
+                <!--TODO code dropdowns on months and years to allow month/year selection-->
+                <button class="previous-month">&#60;</button>
+                <p class="current-month">march</p>
+                <p class="current-year">2022</p>
+                <div class="settings"></div>
+                <button class="next-month">&#62;</button>
+            </div>
+            <div class="weekday-wrapper">
+                <div class="weekday">sunday</div>
+                <div class="weekday">monday</div>
+                <div class="weekday">tuesday</div>
+                <div class="weekday">wednesday</div>
+                <div class="weekday">thursday</div>
+                <div class="weekday">friday</div>
+                <div class="weekday">saturday</div>
+            </div>
+            <!--!make rows of 7 with max of how many you need for 31 days-->
+            <div class="week-wrapper">
+                <div class="week">
+                    <div class="day-box no-day">
+                        <div class="day-num"></div>
+                    </div>
+                    <div class="day-box no-day">
+                        <div class="day-num"></div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">1</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">2</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">3</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">4</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">5</div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day-box">
+                        <div class="day-num">6</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">7</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">8</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">9</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">10</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">11</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">12</div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day-box">
+                        <div class="day-num">13</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">14</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">15</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">16</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">17</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">18</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">19</div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day-box current-day">
+                        <div class="day-num">20</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">21</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">22</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">23</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">24</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">25</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">26</div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day-box">
+                        <div class="day-num">27</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">28</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">29</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">30</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">31</div>
+                    </div>
+                    <div class="day-box no-day">
+                        <div class="day-num"></div>
+                    </div>
+                    <div class="day-box no-day">
+                        <div class="day-num"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="schedule">
+            <!--! ADD + BUTTON TO EVENTS TO BE ABLE TO ADD EVENTS-->
+            <div class="today">
+                <p id="events-today">Todays Events</p>
+                <!--use javascript to show this if there's no content/hide if there is-->
+                <p class="no-events">There are no events to display</p>
+                <!--use javascript to be able to add event sections here-->
+                <button class="add-event">&plus;</button>
+            </div>
+            <div class="upcoming">
+                <p id="upcoming-events">Upcoming Events</p>
+                <!--use javascript to be able to add event sections here-->
+                <p class="no-events">There are no events to display</p>
+                <button class="add-event">&plus;</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js.js"></script>
+</body>

@@ -1,0 +1,151 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgb(51, 49, 49);
+}
+.wrapper{
+    max-width: 410px;
+    max-height: 600px;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+
+.wrapper{
+    margin: 0 auto; /* * center calendar on pg */
+
+}
+.calendar-outline{
+    /* border: 2px solid red; */
+}
+
+
+.month-year{
+    border-radius: 1rem 1rem 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    font-size: 2rem;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='540' height='160' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1005%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(6%2c 138%2c 178%2c 1)'%3e%3c/rect%3e%3cpath d='M666.11 646.86C781.78 604.02 731.89 259.24 967.79 256.47 1203.69 253.7 1417.21 379.04 1571.16 379.67' stroke='rgba(53%2c 76%2c 82%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M621.9 572.47C747.15 562.33 808.59 323.69 1050.63 310.07 1292.67 296.45 1362.16 123.89 1479.36 119.67' stroke='rgba(53%2c 76%2c 82%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M213.35 579.29C415.12 549.34 517.85 74.3 850.87 70.1 1183.88 65.9 1326.05 192.74 1488.38 193.3' stroke='rgba(53%2c 76%2c 82%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M530.27 581.09C646.45 549.3 609.47 226.84 856.48 226.51 1103.5 226.18 1336.93 442.04 1508.91 444.91' stroke='rgba(53%2c 76%2c 82%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M253.06 599.48C442.24 589.63 565.77 263.19 927.47 254.06 1289.18 244.93 1427.44 76.38 1601.89 74.86' stroke='rgba(53%2c 76%2c 82%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1005'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+.month-year p{
+    padding: 0.2rem;
+}
+.current-month{
+    color: #48B8D0;
+}
+.current-year{
+    color: #8AE1FC;
+}
+.previous-month, .next-month{
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #354C52;
+}
+.previous-month:hover, .next-month:hover{
+    cursor: pointer;
+    /* border-radius: 50%;
+    background-color: gainsboro; */
+}
+
+
+.weekday-wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    background-color: #354C52;
+    padding-left: 0.6rem;
+}
+.weekday{
+    color: #8AE1FC;
+    text-shadow: -3px 4px 4px rgba(0, 0, 0, 1);
+}
+.week-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #354C52;
+    padding-top: 0.2rem;
+}
+.week{
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.day-box{
+    flex-basis: 60%; /*! consider lowering this/ examine mobile view further */
+    width: 10px;
+    height: 3.5rem;
+    /* height: 2rem; */
+    background-color: #068AB2;
+    border-radius: 0.2rem;
+    margin: 0.05rem;
+    padding: 1.75rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.day-num{
+    position: relative;
+    font-size: 0.9rem;
+    margin: 0;
+    padding:0;
+    left: 1rem;
+    bottom: 1.5rem;
+}
+
+.schedule{
+    background-color: #354C52;
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin-top: -1rem;
+}
+#events-today, #upcoming-events{
+    border-bottom: 1px solid black;
+}
+#events-today{
+    padding-top: 1.3rem;
+}
+.no-events{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.add-event{
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    margin-left: 11rem;
+}
+.add-event:hover{
+    cursor: pointer;
+    border-radius: 2rem;
+    background-color: rgb(201, 187, 187);
+}
+
+/*TODO make current day lighter blue shade; make unused calendar days sink in and gray out; style add event bttn & next/prev month arrows; add number text to day boxes */
+/*!!use add/remove or toggle on classes to change day box style */
+.no-day{
+    /** styling for boxes when not used */
+    background-color: #778386;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.current-day{
+    /** styling for box that is the current day*/
+    background-color: #67aabe;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    
+}
